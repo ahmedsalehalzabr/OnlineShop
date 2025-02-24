@@ -35,23 +35,23 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Online Shop</a>
+    <a class="navbar-brand" routerLink="/home">Online Shop</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Inventory</a>
+          <a class="nav-link" routerLink="/inventory">Inventory</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Customer</a>
+          <a class="nav-link" routerLink="/customer">Customer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Bill</a>
+          <a class="nav-link" routerLink="/bill">Bill</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -62,15 +62,11 @@
   </div>
 </nav>
 
-<main class="container-fluid" style="margin-top: 50px;">
-  <div class="bg-body-tertiary p-5 rounded">
-    <h1>Asp .Net Core and Angular</h1>
-    <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-    <a class="btn btn-lg btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs &raquo;</a>
-  </div>
-</main>
 
-<router-outlet></router-outlet>
+
+<div class="mt-5">
+  <router-outlet></router-outlet>
+</div>
 
 <!-- <footer class="footer mt-auto py-3 bg-info">
   <div class="container">

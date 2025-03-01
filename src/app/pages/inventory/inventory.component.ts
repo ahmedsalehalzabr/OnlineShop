@@ -83,7 +83,7 @@ export class InventoryComponent {
       })
     };
 
-    if (confirm('هل أنت متأكد أنك تريد حذف هذا العنصر؟')) {
+    if (confirm('Are you shore for dlete this item')) {
       this.httpClient.delete(`${this.apiUrl}/${id}`, httpOptions).subscribe(
         () => {
           alert('تم الحذف بنجاح!');
@@ -97,10 +97,9 @@ export class InventoryComponent {
   }
 
   editInventory(item: any): void {
-    this.inventoryData = { ...item }; // نسخ البيانات إلى النموذج
+    this.inventoryData = { ...item }; //نسخ البيانات إلى النموذج 
   }
-
-  loadInventory(): void {
+  loadInventory(): void { 
     this.httpClient.get<any[]>(this.apiUrl).subscribe((data) => {
       this.inventories = data;
     });

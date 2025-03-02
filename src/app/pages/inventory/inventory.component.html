@@ -31,7 +31,7 @@
           type="number"
           class="form-control"
           placeholder="Stock Available"
-          [(ngModel)]="inventoryData.stockAvailble"
+          [(ngModel)]="inventoryData.stockAvailable"
           name="stockAvailble"
         />
       </div>
@@ -77,7 +77,7 @@
           <tr *ngFor="let item of inventories; let i = index">
             <th scope="row">{{ i + 1 }}</th>
             <td>{{ item.productName }}</td>
-            <td>{{ item.stockAvailble }}</td>
+            <td>{{ item.stockAvailable }}</td>
             <td>{{ item.reorderStock }}</td>
             <td>
               <button type="button" class="btn btn-primary" (click)="editInventory(item)">Edit</button>

@@ -19,7 +19,7 @@ export class InventoryComponent {
     id: null, // تم إضافته للتعديل
     productId: '',
     productName: '',
-    stockAvailble: 0,
+    stockAvailable: 0,
     reorderStock: 0
   };
 
@@ -110,7 +110,7 @@ export class InventoryComponent {
       id: null,
       productId: '',
       productName: '',
-      stockAvailble: 0,
+      stockAvailable: 0,
       reorderStock: 0
     };
   }

@@ -16,4 +16,6 @@ private modelService = inject(NgbModal);
 openModal(){
   this.modelService.open(CustomerDetailDialogComponent);
 }
+
+
 }

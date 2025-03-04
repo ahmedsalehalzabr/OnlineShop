@@ -1,27 +1,32 @@
-<div class="row mx-3 py-3">
-    <h5>Customer Forms</h5>
-    <form>
-        <div class="row py-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="First Name">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Last Name">
-            </div>
+<div class="modal-header">
+    <h5 class="modal-title">{{ customerData.id ? 'Edit Customer' : 'Add New Customer' }}</h5>
+    <button type="button" class="close" (click)="activeModal.dismiss()">×</button>
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="customerData.firstName" name="firstName" required>
         </div>
-        <div class="row py-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Email">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Phone">
-            </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="customerData.lastName" name="lastName" required>
         </div>
-        <div class="row py-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Registeration Date">
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="customerData.email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="number" class="form-control" [(ngModel)]="customerData.phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label>Registration Date</label>
+            <input type="date" class="form-control" [(ngModel)]="customerData.registrationDate" name="registrationDate" required>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">{{ customerData.id ? 'Update' : 'Add' }}</button>
+            <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
         </div>
     </form>
 </div>

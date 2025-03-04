@@ -2,38 +2,35 @@
     <div class="row">
         <button type="button" class="btn btn-primary btn-sm" (click)="openModal()">Add New Customer</button>
     </div>
-    <hr>  
-    <br>
+    <hr>
     <h3>Customer Details</h3>
     <div class="row">
-<table class="table table-striped">
-    <thead>
-        <tr> 
-            <th>Customer ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone</th> 
-            <th>Registration Date</th>
-
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>10</td>
-            <td>Ahmed</td>
-            <td>Alzabr</td>
-            <td>ahmedalzabr3gmail.com</td>
-            <td>+967771143849</td>
-            <td>Yemen</td>
-            <td>
-                <button class="btn btn-primary btn-sm" type="button">Edit</button>  &nbsp;
-                <button class="btn btn-danger btn-sm" type="button">Delete</button>
-        
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Registration Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers">
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.firstName }}</td>
+                    <td>{{ customer.lastName }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.registrationDate }}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" type="button" (click)="openModal(customer)">Edit</button>&nbsp;
+                        <button class="btn btn-danger btn-sm" type="button" (click)="deleteCustomer(customer.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
